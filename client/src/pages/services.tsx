@@ -198,7 +198,7 @@ export default function Services() {
                       </div>
                       
                       <div className="flex gap-3">
-                        <Button asChild className="flex-1 btn-primary"   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+                        <Button asChild  className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
 >
                           <Link href={`/package/${pkg.slug}`}>View Details</Link>
                         </Button>
