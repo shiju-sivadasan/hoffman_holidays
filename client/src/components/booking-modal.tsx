@@ -110,7 +110,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Booki
                     <FormItem>
                       <FormLabel>First Name *</FormLabel>
                       <FormControl>
-                        <Input placeholder="John" {...field} />
+                        <Input />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -124,7 +124,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Booki
                     <FormItem>
                       <FormLabel>Last Name *</FormLabel>
                       <FormControl>
-                        <Input placeholder="Doe" {...field} />
+                        <Input />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -138,7 +138,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Booki
                     <FormItem>
                       <FormLabel>Email *</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john@example.com" {...field} />
+                        <Input type="email" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -152,7 +152,9 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Booki
                     <FormItem>
                       <FormLabel>Phone *</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="+1 (555) 123-4567" {...field} />
+                        <Input type="tel" placeholder="+91 9562746067" {...field} />
+                        <Input type="tel" placeholder="+91 9400846067" {...field} />
+                        <Input type="tel" placeholder="+91 8289866836" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -217,10 +219,10 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Booki
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                          <SelectItem value="1000-2500">$1,000 - $2,500</SelectItem>
-                          <SelectItem value="2500-5000">$2,500 - $5,000</SelectItem>
-                          <SelectItem value="5000+">$5,000+</SelectItem>
+                          <SelectItem value="500-1000">2500 - 3,000</SelectItem>
+                          <SelectItem value="1000-2500">3,000 - 5,500</SelectItem>
+                          <SelectItem value="2500-5000">5,500 - 9,000</SelectItem>
+                          <SelectItem value="5000+">9,000+</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />

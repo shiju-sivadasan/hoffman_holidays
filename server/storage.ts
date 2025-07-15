@@ -61,11 +61,248 @@ export class MemStorage implements IStorage {
   private initializePackages() {
     const samplePackages: Omit<Package, 'id'>[] = [
       {
+    title: "Munnar Hill Station Retreat",
+    slug: "munnar-hill-station-retreat",
+    description: "A 5-day escape to Munnar, the 'Kashmir of South India,' nestled in the Western Ghats, famous for its sprawling tea plantations, misty hills, and rich biodiversity.",
+    duration: 5,
+    price: 2999, // INR 599.00 in cents
+    maxPeople: 6,
+    category: "hill station",
+    image: "/munnar.jpg",
+    highlights: [
+      "4 nights in a cozy hill resort",
+      "Guided tour of tea plantations and TATA Tea Museum",
+      "Visit to Eravikulam National Park for Nilgiri Tahr spotting",
+      "Trek to Anamudi Peak",
+      "Scenic drive through Mattupetty Dam and Echo Point",
+      "Spice garden tour with local lunch"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Munnar", description: "Airport/station pickup, resort check-in, evening at leisure in Munnar town" },
+      { day: 2, title: "Tea Trails", description: "Morning tea plantation tour, visit TATA Tea Museum, lunch at local eatery" },
+      { day: 3, title: "Wildlife & Nature", description: "Eravikulam National Park, Nilgiri Tahr spotting, Mattupetty Dam visit" },
+      { day: 4, title: "Adventure Day", description: "Trek to Anamudi Peak, spice garden tour, evening cultural show" },
+      { day: 5, title: "Departure", description: "Breakfast, visit Echo Point, transfer to airport/station" }
+    ],
+    includes: [
+      "Round-trip transfers from Kochi",
+      "4 nights resort accommodation",
+      "Daily breakfast and 2 dinners",
+      "All tours and entrance fees",
+      "Local transportation",
+      "English-speaking guide"
+    ],
+    featured: true
+  },
+  {
+    title: "Vagamon Meadow Adventure",
+    slug: "vagamon-meadow-adventure",
+    description: "A 4-day adventure in Vagamon, Kerala's green paradise, offering rolling meadows, pine forests, and thrilling outdoor activities.",
+    duration: 4,
+    price: 3999, // INR 549.00 in cents
+    maxPeople: 6,
+    category: "adventure",
+    image: "/wagamon.jpg",
+    highlights: [
+      "3 nights in a scenic resort",
+      "Paragliding experience",
+      "Trekking through pine forests",
+      "Visit to Vagamon Lake",
+      "Jeep safari to remote meadows",
+      "Evening bonfire with BBQ"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Vagamon", description: "Transfer from Kochi, resort check-in, evening lake visit" },
+      { day: 2, title: "Adventure Day", description: "Paragliding session, pine forest trek, local lunch" },
+      { day: 3, title: "Explore Meadows", description: "Jeep safari to meadows, photography, bonfire dinner" },
+      { day: 4, title: "Departure", description: "Morning relaxation, breakfast, transfer to Kochi" }
+    ],
+    includes: [
+      "Round-trip transfers from Kochi",
+      "3 nights resort accommodation",
+      "Daily breakfast and 2 dinners",
+      "Paragliding and jeep safari",
+      "All entrance fees",
+      "Local guide"
+    ],
+    featured: true
+  },
+  {
+    title: "Dandeli Jungle Adventure",
+    slug: "dandeli-jungle-adventure",
+    description: "A 4-day thrilling adventure in Dandeli, Karnataka, with river rafting, wildlife safaris, and lush forests.",
+    duration: 4,
+    price: 5999, // INR 549.00 in cents
+    maxPeople: 8,
+    category: "adventure",
+    image: "dandeli.jpg",
+    highlights: [
+      "3 nights in a jungle camp",
+      "White-water rafting on Kali River",
+      "Wildlife safari in Dandeli Sanctuary",
+      "Kayaking and coracle rides",
+      "Bird watching with expert guide",
+      "Campfire nights with BBQ"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Dandeli", description: "Transfer from Hubli, camp check-in, evening nature walk" },
+      { day: 2, title: "River Adventure", description: "White-water rafting, kayaking, local lunch" },
+      { day: 3, title: "Wildlife Safari", description: "Morning safari, bird watching, campfire dinner" },
+      { day: 4, title: "Departure", description: "Coracle ride, breakfast, transfer to Hubli" }
+    ],
+    includes: [
+      "Round-trip transfers from Hubli",
+      "3 nights camp accommodation",
+      "All meals",
+      "Rafting, safari, and activities",
+      "Local transportation",
+      "English-speaking guide"
+    ],
+    featured: true
+  },
+  {
+    title: "Gokarna Beach & Temple Tour",
+    slug: "gokarna-beach-temple-tour",
+    description: "A 4-day spiritual and beach getaway to Gokarna, Karnataka, known for its pristine beaches and ancient temples.",
+    duration: 4,
+    price: 4999, // INR 499.00 in cents
+    maxPeople: 6,
+    category: "beach",
+    image: "/gokarna.jpg",
+    highlights: [
+      "3 nights in a beachside homestay",
+      "Visit to Mahabaleshwar Temple",
+      "Beach hopping (Om, Kudle, Paradise)",
+      "Sunset boat ride",
+      "Yoga session by the beach",
+      "Local seafood dining"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Gokarna", description: "Transfer from Goa, homestay check-in, evening temple visit" },
+      { day: 2, title: "Beach Day", description: "Beach hopping, yoga session, local lunch" },
+      { day: 3, title: "Coastal Bliss", description: "Sunset boat ride, beach relaxation, seafood dinner" },
+      { day: 4, title: "Departure", description: "Morning beach walk, breakfast, transfer to Goa" }
+    ],
+    includes: [
+      "Round-trip transfers from Goa",
+      "3 nights homestay accommodation",
+      "Daily breakfast and 2 dinners",
+      "Temple and beach tours",
+      "Yoga session",
+      "Local guide"
+    ],
+    featured: false
+  },
+  {
+    title: "Udupi Coastal Culture",
+    slug: "udupi-coastal-culture",
+    description: "A 4-day cultural journey to Udupi, Karnataka, famous for its Krishna Temple, beaches, and authentic South Indian cuisine.",
+    duration: 4,
+    price: 6599, // INR 479.00 in cents
+    maxPeople: 6,
+    category: "cultural",
+    image: "/uduppi.jpg",
+    highlights: [
+      "3 nights in a heritage hotel",
+      "Visit to Sri Krishna Matha Temple",
+      "Beach day at Malpe Beach",
+      "Cooking class for Udupi cuisine",
+      "Boat ride to St. Mary's Island",
+      "Cultural evening with Yakshagana performance"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Udupi", description: "Transfer from Mangalore, hotel check-in, evening temple visit" },
+      { day: 2, title: "Cultural Exploration", description: "Sri Krishna Matha tour, Udupi cuisine cooking class, local lunch" },
+      { day: 3, title: "Beach & Island Day", description: "Malpe Beach, boat ride to St. Mary's Island, Yakshagana show" },
+      { day: 4, title: "Departure", description: "Morning temple visit, breakfast, transfer to Mangalore" }
+    ],
+    includes: [
+      "Round-trip transfers from Mangalore",
+      "3 nights heritage hotel accommodation",
+      "Daily breakfast and 2 dinners",
+      "All tours and activities",
+      "Boat ride to St. Mary's Island",
+      "Local guide"
+    ],
+    featured: true
+  },
+  {
+    title: "Ladakh Himalayan Odyssey",
+    slug: "ladakh-himalayan-odyssey",
+    description: "A 7-day journey through the rugged beauty of Ladakh, with monasteries, high-altitude lakes, and desert landscapes.",
+    duration: 7,
+    price: 9999, // INR 999.00 in cents
+    maxPeople: 6,
+    category: "adventure",
+    image: "/ladakh.jpg",
+    highlights: [
+      "6 nights in hotels and camps",
+      "Visit to Pangong Lake",
+      "Monastery tour (Hemis, Thiksey)",
+      "Khardung La Pass drive",
+      "White-water rafting on Zanskar River",
+      "Stargazing in Nubra Valley"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Leh", description: "Airport transfer, hotel check-in, acclimatization day" },
+      { day: 2, title: "Monastery Tour", description: "Hemis and Thiksey monasteries, local lunch" },
+      { day: 3, title: "Nubra Valley", description: "Drive to Nubra via Khardung La, camp stay, stargazing" },
+      { day: 4, title: "Pangong Lake", description: "Drive to Pangong Lake, lakeside camping" },
+      { day: 5, title: "Rafting Adventure", description: "Return to Leh, Zanskar River rafting" },
+      { day: 6, title: "Leh Exploration", description: "Leh Palace, Shanti Stupa, market visit" },
+      { day: 7, title: "Departure", description: "Breakfast, airport transfer" }
+    ],
+    includes: [
+      "Round-trip flights to Leh",
+      "6 nights accommodation (hotels/camps)",
+      "Daily breakfast and 4 dinners",
+      "All tours and activities",
+      "4WD transportation",
+      "Local guide"
+    ],
+    featured: true
+  },
+  {
+    title: "Kashmir Valley Retreat",
+    slug: "kashmir-valley-retreat",
+    description: "A 6-day escape to the 'Paradise on Earth,' Kashmir, with serene lakes, Mughal gardens, and houseboat stays.",
+    duration: 6,
+    price: 7999, // INR 799.00 in cents
+    maxPeople: 4,
+    category: "romantic",
+    image: "kashmir.jpg",
+    highlights: [
+      "5 nights in hotels and houseboats",
+      "Shikara ride on Dal Lake",
+      "Mughal Gardens tour",
+      "Gulmarg gondola ride",
+      "Visit to Sonamarg",
+      "Kashmiri cultural evening"
+    ],
+    itinerary: [
+      { day: 1, title: "Arrival in Srinagar", description: "Airport transfer, houseboat check-in, evening shikara ride" },
+      { day: 2, title: "Mughal Gardens", description: "Visit Shalimar Bagh, Nishat Bagh, local lunch" },
+      { day: 3, title: "Gulmarg Adventure", description: "Day trip to Gulmarg, gondola ride, skiing" },
+      { day: 4, title: "Sonamarg Exploration", description: "Sonamarg glacier visit, horse riding" },
+      { day: 5, title: "Srinagar Culture", description: "Hazratbal Shrine, market visit, cultural evening" },
+      { day: 6, title: "Departure", description: "Breakfast, airport transfer" }
+    ],
+    includes: [
+      "Round-trip flights to Srinagar",
+      "5 nights accommodation (hotel/houseboat)",
+      "Daily breakfast and 3 dinners",
+      "All tours and activities",
+      "Shikara rides",
+      "Local guide"
+    ],
+    featured: true
+  },
+      {
         title: "Bali Paradise Escape",
         slug: "bali-paradise-escape",
         description: "7 days of tropical bliss with pristine beaches, temple visits, and cultural experiences in the heart of Indonesia.",
         duration: 7,
-        price: 89900, // $899.00 in cents
+        price: 12999, // $899.00 in cents
         maxPeople: 6,
         category: "tropical",
         image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
@@ -96,157 +333,15 @@ export class MemStorage implements IStorage {
         ],
         featured: true
       },
-      {
-        title: "Paris Romance",
-        slug: "paris-romance",
-        description: "5 magical days exploring the City of Love with guided tours, fine dining, and iconic landmarks.",
-        duration: 5,
-        price: 129900, // $1,299.00 in cents
-        maxPeople: 2,
-        category: "romantic",
-        image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        highlights: [
-          "4 nights in luxury hotel near Champs-Élysées",
-          "Private Seine river cruise with dinner",
-          "Skip-the-line tickets to Eiffel Tower and Louvre",
-          "Wine tasting in Montmartre",
-          "Romantic dinner at Michelin-starred restaurant",
-          "Professional photoshoot at iconic locations"
-        ],
-        itinerary: [
-          { day: 1, title: "Arrival & Evening Romance", description: "Airport transfer, hotel check-in, Seine river dinner cruise" },
-          { day: 2, title: "Iconic Paris", description: "Eiffel Tower visit, Champs-Élysées walk, Louvre Museum" },
-          { day: 3, title: "Art & Culture", description: "Montmartre exploration, Sacré-Cœur, wine tasting" },
-          { day: 4, title: "Royal Experience", description: "Versailles day trip, Michelin-starred dinner" },
-          { day: 5, title: "Farewell Paris", description: "Professional photoshoot, souvenir shopping, departure" }
-        ],
-        includes: [
-          "Round-trip flights",
-          "4 nights luxury hotel accommodation",
-          "Daily breakfast and 2 dinners",
-          "All entrance fees and tours",
-          "Private transportation",
-          "Professional guide and photographer"
-        ],
-        featured: true
-      },
-      {
-        title: "Tokyo Adventure",
-        slug: "tokyo-adventure",
-        description: "6 days immersing in Japanese culture, from ancient temples to modern technology and world-class cuisine.",
-        duration: 6,
-        price: 119900, // $1,199.00 in cents
-        maxPeople: 4,
-        category: "cultural",
-        image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        highlights: [
-          "5 nights in modern Tokyo hotel",
-          "Traditional ryokan experience",
-          "Sushi-making class with master chef",
-          "Mt. Fuji day trip",
-          "Tokyo Disneyland tickets included",
-          "Traditional tea ceremony experience"
-        ],
-        itinerary: [
-          { day: 1, title: "Tokyo Arrival", description: "Airport transfer, hotel check-in, Shibuya and Harajuku exploration" },
-          { day: 2, title: "Traditional Culture", description: "Senso-ji Temple, tea ceremony, traditional lunch" },
-          { day: 3, title: "Mt. Fuji Adventure", description: "Full day Mt. Fuji tour, onsen experience" },
-          { day: 4, title: "Modern Tokyo", description: "Tokyo Skytree, Ginza shopping, sushi-making class" },
-          { day: 5, title: "Disney Magic", description: "Tokyo Disneyland full day experience" },
-          { day: 6, title: "Farewell Japan", description: "Last-minute shopping, airport departure" }
-        ],
-        includes: [
-          "Round-trip flights",
-          "5 nights hotel + 1 night ryokan",
-          "Daily breakfast and 3 dinners",
-          "All transportation and entrance fees",
-          "Disney tickets included",
-          "English-speaking guide"
-        ],
-        featured: false
-      },
-      {
-        title: "Swiss Alps Luxury",
-        slug: "swiss-alps-luxury",
-        description: "8 days of alpine luxury with world-class skiing, spa treatments, and gourmet mountain cuisine.",
-        duration: 8,
-        price: 249900, // $2,499.00 in cents
-        maxPeople: 4,
-        category: "luxury",
-        image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        highlights: [
-          "7 nights in 5-star alpine resort",
-          "Daily spa treatments included",
-          "Private ski lessons with instructor",
-          "Helicopter tour of the Alps",
-          "Michelin-starred dining experiences",
-          "Private mountain cabin dinner"
-        ],
-        itinerary: [
-          { day: 1, title: "Alpine Arrival", description: "Airport transfer, luxury resort check-in, welcome dinner" },
-          { day: 2, title: "Skiing & Spa", description: "Ski lessons, afternoon spa treatment, gourmet dinner" },
-          { day: 3, title: "Mountain Adventure", description: "Helicopter Alps tour, mountain hiking, relaxation" },
-          { day: 4, title: "Cultural Exploration", description: "Local village visit, cheese making, wine tasting" },
-          { day: 5, title: "Luxury Experience", description: "Private cabin dinner, stargazing, hot springs" },
-          { day: 6, title: "Adventure Activities", description: "Snow activities, spa day, farewell dinner" },
-          { day: 7, title: "Scenic Beauty", description: "Cable car rides, photography, shopping" },
-          { day: 8, title: "Departure", description: "Final breakfast, airport transfer" }
-        ],
-        includes: [
-          "Round-trip first-class flights",
-          "7 nights 5-star resort",
-          "All meals and beverages",
-          "Ski equipment and lessons",
-          "Spa treatments daily",
-          "All activities and transfers"
-        ],
-        featured: true
-      },
-      {
-        title: "African Safari",
-        slug: "african-safari",
-        description: "10 days of wildlife adventure in Kenya and Tanzania with game drives, luxury lodges, and cultural visits.",
-        duration: 10,
-        price: 329900, // $3,299.00 in cents
-        maxPeople: 8,
-        category: "adventure",
-        image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        highlights: [
-          "9 nights in luxury safari lodges",
-          "Big Five game drives daily",
-          "Maasai village cultural experience",
-          "Serengeti balloon safari",
-          "Ngorongoro Crater exploration",
-          "Professional wildlife photography guide"
-        ],
-        itinerary: [
-          { day: 1, title: "Nairobi Arrival", description: "Airport transfer, city hotel, orientation dinner" },
-          { day: 2, title: "Maasai Mara", description: "Fly to Maasai Mara, first game drive, lodge check-in" },
-          { day: 3, title: "Maasai Mara Safari", description: "Full day game drives, Big Five spotting" },
-          { day: 4, title: "Cultural Experience", description: "Maasai village visit, traditional activities" },
-          { day: 5, title: "Serengeti Adventure", description: "Fly to Serengeti, game drives, luxury camp" },
-          { day: 6, title: "Balloon Safari", description: "Hot air balloon ride, champagne breakfast, game drives" },
-          { day: 7, title: "Ngorongoro Crater", description: "Crater game drive, lodge accommodation" },
-          { day: 8, title: "Lake Manyara", description: "Lake Manyara National Park, tree-climbing lions" },
-          { day: 9, title: "Arusha Relaxation", description: "Spa day, souvenir shopping, farewell dinner" },
-          { day: 10, title: "Departure", description: "Final breakfast, airport transfer, departure" }
-        ],
-        includes: [
-          "Round-trip international flights",
-          "9 nights luxury safari lodges",
-          "All meals and beverages",
-          "Daily game drives in 4WD vehicles",
-          "Professional guide and photographer",
-          "All park fees and activities"
-        ],
-        featured: false
-      },
+     
+     
+      
       {
         title: "Maldives Luxury",
         slug: "maldives-luxury",
         description: "5 days in paradise with overwater villas, private beaches, and world-class spa treatments.",
         duration: 5,
-        price: 499900, // $4,999.00 in cents
+        price: 11999, // $4,999.00 in cents
         maxPeople: 2,
         category: "luxury",
         image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
@@ -285,39 +380,56 @@ export class MemStorage implements IStorage {
 
   private initializeTestimonials() {
     const sampleTestimonials: Omit<Testimonial, 'id' | 'createdAt'>[] = [
-      {
-        name: "Sarah & Mike Johnson",
-        email: "sarah.johnson@email.com",
-        rating: 5,
-        message: "Our Bali trip was absolutely magical! The attention to detail and personalized service made our honeymoon unforgettable. Every recommendation was perfect.",
-        packageId: 1,
-        approved: true
-      },
-      {
-        name: "David Martinez",
-        email: "david.martinez@email.com",
-        rating: 5,
-        message: "The African safari exceeded all expectations! Our guide was knowledgeable, and we saw the Big Five. It was the adventure of a lifetime!",
-        packageId: 5,
-        approved: true
-      },
-      {
-        name: "Emily Chen",
-        email: "emily.chen@email.com",
-        rating: 5,
-        message: "Family trip to Tokyo was perfectly organized. The kids loved the cultural experiences, and we appreciated the flexibility in the itinerary.",
-        packageId: 3,
-        approved: true
-      },
-      {
-        name: "Alexandra Dubois",
-        email: "alex.dubois@email.com",
-        rating: 5,
-        message: "The luxury Swiss Alps package was worth every penny. The hotels were stunning, and the alpine activities were world-class.",
-        packageId: 4,
-        approved: true
-      }
-    ];
+  {
+    name: "Anjali Nair",
+    email: "anjali.nair@email.com",
+    rating: 5,
+    message: "Our college trip to Munnar was just amazing! The misty hills, campfire nights, and trekking through tea plantations made it an unforgettable bonding experience.",
+    packageId: 1,
+    approved: true
+  },
+  {
+    name: "Rahul Menon",
+    email: "rahul.menon@email.com",
+    rating: 5,
+    message: "Trip To Go nailed our Goa trip! From beach parties to parasailing and group dinners, everything was perfectly organized. Easily one of the best memories from college.",
+    packageId: 2,
+    approved: true
+  },
+  {
+    name: "Sneha Raj",
+    email: "sneha.raj@email.com",
+    rating: 5,
+    message: "Dandeli was pure adventure! White water rafting and staying by the riverside gave us the thrill we wanted. Hats off to Trip To Go for keeping it safe and exciting!",
+    packageId: 3,
+    approved: true
+  },
+  {
+    name: "Arjun Das",
+    email: "arjun.das@email.com",
+    rating: 5,
+    message: "Gokarna was peaceful yet fun — the beach trek and sunrise vibes were next level. Perfectly planned by Trip To Go for a relaxed but fun college trip.",
+    packageId: 4,
+    approved: true
+  },
+  {
+    name: "Meera Suresh",
+    email: "meera.suresh@email.com",
+    rating: 5,
+    message: "Our Vagamon trip was magical! Rolling meadows, foggy mornings, and bonfire games made it special. Thanks to Trip To Go for the flawless coordination!",
+    packageId: 5,
+    approved: true
+  },
+  {
+    name: "Vishnu Ramesh",
+    email: "vishnu.ramesh@email.com",
+    rating: 5,
+    message: "A Bali trip with college friends? It was epic! The beach vibes, temple visits, and parties were all well handled by Trip To Go. Would go again in a heartbeat!",
+    packageId: 6,
+    approved: true
+  }
+];
+
 
     sampleTestimonials.forEach(testimonial => {
       const id = this.currentTestimonialIdCounter++;

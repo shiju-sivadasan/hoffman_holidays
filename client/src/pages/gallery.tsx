@@ -7,107 +7,107 @@ import { Badge } from "@/components/ui/badge";
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_1.jpg",
     alt: "Machu Picchu ancient ruins",
-    category: "destinations",
-    title: "Machu Picchu, Peru",
-    description: "Ancient Incan ruins perched high in the Andes mountains"
+    // category: "destinations",
+    // title: "Machu Picchu, Peru",
+    // description: "Ancient Incan ruins perched high in the Andes mountains"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_2.jpg",
     alt: "Northern Lights aurora borealis",
-    category: "destinations",
-    title: "Northern Lights, Iceland",
-    description: "Spectacular aurora borealis dancing across the night sky"
+    // category: "destinations",
+    // title: "Northern Lights, Iceland",
+    // description: "Spectacular aurora borealis dancing across the night sky"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_3.jpg",
     alt: "White water rafting adventure",
-    category: "activities",
-    title: "White Water Rafting",
-    description: "Thrilling adventure through rushing rapids"
+    // category: "activities",
+    // title: "White Water Rafting",
+    // description: "Thrilling adventure through rushing rapids"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_4.jpg",
     alt: "Japanese temple with cherry blossoms",
-    category: "culture",
-    title: "Cherry Blossoms, Japan",
-    description: "Traditional temple surrounded by beautiful sakura flowers"
+    // category: "culture",
+    // title: "Cherry Blossoms, Japan",
+    // description: "Traditional temple surrounded by beautiful sakura flowers"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_5.jpg",
     alt: "Scuba diving with coral reef",
-    category: "activities",
-    title: "Coral Reef Diving",
-    description: "Exploring vibrant underwater ecosystems"
+    // category: "activities",
+    // title: "Coral Reef Diving",
+    // description: "Exploring vibrant underwater ecosystems"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_6.jpg",
     alt: "Desert camel caravan at sunset",
-    category: "destinations",
-    title: "Sahara Desert, Morocco",
-    description: "Camel caravan crossing golden sand dunes at sunset"
+    // category: "destinations",
+    // title: "Sahara Desert, Morocco",
+    // description: "Camel caravan crossing golden sand dunes at sunset"
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_traveller_1.jpeg",
     alt: "Mountain hiking trail with valley view",
-    category: "activities",
-    title: "Mountain Hiking",
-    description: "Breathtaking views from scenic mountain trails"
+    // category: "activities",
+    // title: "Mountain Hiking",
+    // description: "Breathtaking views from scenic mountain trails"
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_zedone.jpg",
     alt: "Colorful street food market",
-    category: "culture",
-    title: "Street Food Markets",
-    description: "Vibrant local markets with authentic cuisine"
+    // category: "culture",
+    // title: "Street Food Markets",
+    // description: "Vibrant local markets with authentic cuisine"
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_traveller_2.jpeg",
     alt: "Maldives overwater bungalows",
-    category: "destinations",
-    title: "Maldives Paradise",
-    description: "Luxury overwater villas in crystal clear lagoons"
+    // category: "destinations",
+    // title: "Maldives Paradise",
+    // description: "Luxury overwater villas in crystal clear lagoons"
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_1.jpg",
     alt: "African safari wildlife",
-    category: "activities",
-    title: "Safari Adventure",
-    description: "Close encounters with African wildlife"
+    // category: "activities",
+    // title: "Safari Adventure",
+    // description: "Close encounters with African wildlife"
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_2.jpg",
     alt: "Eiffel Tower Paris",
-    category: "destinations",
-    title: "Paris, France",
-    description: "Iconic Eiffel Tower and romantic city views"
+    // category: "destinations",
+    // title: "Paris, France",
+    // description: "Iconic Eiffel Tower and romantic city views"
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1493780474015-ba834fd0ce2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+    src: "/hoffman_gallery_3.jpg",
     alt: "Traditional cultural festival",
-    category: "culture",
-    title: "Cultural Festivals",
-    description: "Authentic local celebrations and traditions"
+    // category: "culture",
+    // title: "Cultural Festivals",
+    // description: "Authentic local celebrations and traditions"
   }
 ];
 
 const categories = [
-  { value: "all", label: "All Photos" },
-  { value: "destinations", label: "Destinations" },
-  { value: "activities", label: "Activities" },
-  { value: "culture", label: "Culture" },
+  // { value: "all", label: "All Photos" },
+  // { value: "destinations", label: "Destinations" },
+  // { value: "activities", label: "Activities" },
+  // { value: "culture", label: "Culture" },
 ];
 
 export default function Gallery() {
@@ -121,8 +121,16 @@ export default function Gallery() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-[hsl(203,89%,61%)] to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+       <section className="py-20 text-white relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hoffman_cover_image.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Travel Gallery</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
             Explore stunning destinations and experiences from our travelers' journeys around the world
@@ -231,7 +239,7 @@ export default function Gallery() {
               Join our community on social media for daily travel inspiration and behind-the-scenes moments
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-primary">
+              <Button size="lg"   className="bg-white text-primary hover:bg-gray-200 border border-primary">
                 Follow on Instagram
               </Button>
               <Button size="lg" variant="outline">

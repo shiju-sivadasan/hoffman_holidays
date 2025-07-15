@@ -131,11 +131,11 @@ export default function PackageDetail() {
               </div>
             </div>
             <div className="flex items-center">
-              <DollarSign className="w-6 h-6 text-primary mr-3" />
+              {/* <DollarSign className="w-6 h-6 text-primary mr-3" /> */}
               <div>
                 <div className="font-semibold">Starting Price</div>
                 <div className="text-2xl font-bold text-primary">
-                  ${(pkg.price / 100).toLocaleString()}
+                  {pkg.price}
                 </div>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function PackageDetail() {
                 <CardContent className="p-6">
                   <div className="text-center mb-6">
                     <div className="text-3xl font-bold text-primary mb-2">
-                      ${(pkg.price / 100).toLocaleString()}
+                      {pkg.price}
                     </div>
                     <div className="text-gray-600">per person</div>
                   </div>
@@ -233,7 +233,8 @@ export default function PackageDetail() {
                   <div className="space-y-4">
                     <Button 
                       onClick={() => setIsBookingModalOpen(true)}
-                      className="w-full btn-primary"
+                        className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+
                       size="lg"
                     >
                       Book This Package

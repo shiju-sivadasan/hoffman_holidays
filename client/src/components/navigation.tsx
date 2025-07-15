@@ -31,7 +31,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-primary">WanderWise</h1>
+              <h1 className="text-2xl font-bold text-primary"><img src="/hoffman_logo.png" alt="hoffman logo" width="100px" height="100px"></img></h1>
             </Link>
           </div>
 
@@ -54,7 +54,8 @@ export default function Navigation() {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Button asChild className="btn-accent hidden sm:inline-flex">
+            <Button   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
               <Link href="/book-now">Book Now</Link>
             </Button>
 
@@ -84,7 +85,7 @@ export default function Navigation() {
                     </Link>
                   ))}
                   
-                  <Button asChild className="btn-accent mt-6">
+                  <Button className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300">
                     <Link href="/book-now" onClick={() => setIsMobileMenuOpen(false)}>
                       Book Now
                     </Link>

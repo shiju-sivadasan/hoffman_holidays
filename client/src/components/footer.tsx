@@ -11,15 +11,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[hsl(216,12%,28%)] text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold text-primary mb-4">WanderWise</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">Hoffman Holidays</h3>
             <p className="text-gray-300 mb-6">
-              Creating unforgettable travel experiences for adventurers worldwide since 2008.
+              Creating unforgettable travel experiences for adventurers worldwide since 2020.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
@@ -80,32 +80,32 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-300">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Bali, Indonesia
+                  Munnar
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Paris, France
+                  Wagamon
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Tokyo, Japan
+                  Dandeli
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Swiss Alps
+                  Uduppi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  African Safari
+                  Ladakh
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Maldives
+                  Kashmir
                 </a>
               </li>
             </ul>
@@ -124,7 +124,8 @@ export default function Footer() {
                 className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 focus:border-primary"
                 required
               />
-              <Button type="submit" className="w-full btn-primary">
+              <Button type="submit"   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
                 Subscribe
               </Button>
             </form>
@@ -132,15 +133,19 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-gray-300">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                +1 (555) 123-4567
+                +91 9562746067
+                <br></br>
+                +91 9400846067
+                <br></br>
+                +91 8289866836
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                info@wanderwise.com
+                info@hoffmanholidays.com
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                123 Adventure Street, Travel City
+                Thrissur, Kerala, India
               </div>
             </div>
           </div>
@@ -150,7 +155,7 @@ export default function Footer() {
         <div className="border-t border-gray-600 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm mb-4 md:mb-0">
-              &copy; 2024 WanderWise Travel Agency. All rights reserved.
+              © 2025 Hoffman Holidays Official. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-300">
               <a href="#" className="hover:text-primary transition-colors">

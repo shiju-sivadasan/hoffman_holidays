@@ -5,7 +5,60 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Calendar, Users, MapPin, Star } from "lucide-react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 import type { Package } from "@shared/schema";
+
+// Animated StatItem component
+const StatItem = ({ value, suffix, label }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5 }
+      });
+    }
+  }, [isInView, controls]);
+
+  const formatNumber = (num) => {
+    if (typeof num === 'number' && num >= 1000) {
+      return Math.floor(num).toLocaleString();
+    }
+    return num.toString();
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={controls}
+      className="text-center"
+    >
+      <motion.div
+        className="text-4xl font-bold mb-2 text-primary"
+        initial={{ textContent: 0 }}
+        animate={{
+          textContent: parseFloat(value.replace(/[^0-9.]/g, '')),
+          transition: { duration: 2, ease: 'easeOut' }
+        }}
+        onUpdate={(latest) => {
+          const element = ref.current?.firstChild;
+          if (element) {
+            element.textContent = formatNumber(Math.floor(latest.textContent)) + (suffix || '');
+          }
+        }}
+      >
+        {formatNumber(0) + (suffix || '')}
+      </motion.div>
+      <div className="text-black">{label}</div>
+    </motion.div>
+  );
+};
 
 export default function Home() {
   const { data: featuredPackages, isLoading } = useQuery<Package[]>({
@@ -31,7 +84,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
+            backgroundImage: "url('/hoffman_home_page_image.jpeg')",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -39,28 +92,32 @@ export default function Home() {
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fadeInUp">
-            Discover Your Next <span className="text-[hsl(203,89%,61%)]">Adventure</span>
+            Discover The World <br></br><span className="text-[hsl(203,89%,61%)]">With Us</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fadeInUp">
-            Create unforgettable memories with our expertly crafted travel experiences
+            Create unforgettable memories with our Team <b><i>Hoffman</i></b>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
-            <Button 
-              size="lg" 
-              className="btn-primary text-lg px-8 py-4 h-auto transform hover:scale-105"
-              onClick={scrollToServices}
-            >
-              Explore Packages
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-white text-white hover:bg-white hover:text-[hsl(216,12%,28%)] text-lg px-8 py-4 h-auto bg-transparent"
-              asChild
-            >
-              <Link href="/book-now">Plan Your Trip</Link>
-            </Button>
-          </div>
+  {/* Button 1: Explore Packages */}
+  <Button 
+    size="lg" 
+    className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+    onClick={scrollToServices}
+  >
+    Explore Packages
+  </Button>
+
+  {/* Button 2: Plan Your Trip */}
+  <Button 
+  size="lg" 
+  variant="outline"
+  asChild
+  className="bg-transparent text-white border border-white hover:bg-white hover:text-blue-600 transition-colors duration-300"
+>
+  <Link href="/book-now">Plan Your Trip</Link>
+</Button>
+
+        </div>
         </div>
       </section>
 
@@ -74,12 +131,12 @@ export default function Home() {
                 <SelectValue placeholder="Select destination..." />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="bali">Bali, Indonesia</SelectItem>
-                <SelectItem value="paris">Paris, France</SelectItem>
-                <SelectItem value="tokyo">Tokyo, Japan</SelectItem>
-                <SelectItem value="swiss">Swiss Alps</SelectItem>
-                <SelectItem value="africa">African Safari</SelectItem>
-                <SelectItem value="maldives">Maldives</SelectItem>
+                <SelectItem value="bali">Munnar</SelectItem>
+                <SelectItem value="paris">Wagamon</SelectItem>
+                <SelectItem value="tokyo">Dandeli</SelectItem>
+                <SelectItem value="swiss">Uduppi</SelectItem>
+                <SelectItem value="africa">Ladakh</SelectItem>
+                <SelectItem value="maldives">Kashmir</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -92,7 +149,8 @@ export default function Home() {
             <Input type="date" />
           </div>
           <div className="flex items-end">
-            <Button className="w-full btn-secondary">
+            <Button   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
               <MapPin className="w-4 h-4 mr-2" />
               Search
             </Button>
@@ -111,7 +169,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredPackages?.map((pkg) => (
+            {featuredPackages?.slice(0,6).map((pkg) => (
               <Card key={pkg.id} className="travel-card">
                 <div className="relative">
                   <img 
@@ -147,12 +205,13 @@ export default function Home() {
                       <span className="text-sm text-gray-600 ml-1">4.9</span>
                     </div>
                     <div className="text-2xl font-bold text-primary">
-                      ${(pkg.price / 100).toLocaleString()}
+                      RS {pkg.price}
                     </div>
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button asChild className="flex-1 btn-primary">
+                    <Button asChild className="flex-1 btn-primary"   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
                       <Link href={`/package/${pkg.slug}`}>View Details</Link>
                     </Button>
                     <Button variant="outline" size="sm" className="px-3">
@@ -165,7 +224,8 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="btn-primary">
+            <Button asChild size="lg"  className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
               <Link href="/services">View All Packages</Link>
             </Button>
           </div>
@@ -176,7 +236,7 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[hsl(216,12%,28%)] mb-4">Why Choose WanderWise?</h2>
+            <h2 className="text-4xl font-bold text-[hsl(216,12%,28%)] mb-4">Why Choose HoffMan?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience the difference with our personalized approach to travel
             </p>
@@ -194,7 +254,7 @@ export default function Home() {
             </Card>
 
             <Card className="text-center p-8">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex itemssend justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Premium Quality</h3>
@@ -217,25 +277,13 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-[hsl(216,12%,28%)] text-white">
+      <section className="py-20 bg-[hsl(0, 0.00%, 98.80%)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2 text-primary">15,000+</div>
-              <div className="text-gray-300">Happy Customers</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-primary">50+</div>
-              <div className="text-gray-300">Destinations</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-primary">15</div>
-              <div className="text-gray-300">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-primary">4.9</div>
-              <div className="text-gray-300">Average Rating</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StatItem value="15000" suffix="+" label="Happy Customers" />
+            <StatItem value="50" suffix="+" label="Destinations" />
+            <StatItem value="5" label="Years Experience" />
+            <StatItem value="4.9" label="Average Rating" />
           </div>
         </div>
       </section>

@@ -54,14 +54,22 @@ export default function Contact() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-[hsl(203,89%,61%)] to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Get In Touch</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Ready to start planning your next adventure? Our travel experts are here to help you create the perfect itinerary
-          </p>
-        </div>
-      </section>
+       <section className="py-20 text-white relative">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hoffman_cover_image.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Get In Touch</h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+          Ready to start planning your next adventure? Our travel experts are here to help you create the perfect itinerary
+        </p>
+      </div>
+    </section>
 
       {/* Contact Section */}
       <section className="py-20">
@@ -78,7 +86,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[hsl(216,12%,28%)] mb-1">Address</h3>
-                      <p className="text-gray-600">123 Adventure Street<br />Travel City, TC 12345<br />United States</p>
+                      <p className="text-gray-600">Near Thrissur Town<br />Kerala<br />India</p>
                     </div>
                   </div>
                   
@@ -88,7 +96,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[hsl(216,12%,28%)] mb-1">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567<br />+1 (555) 123-4568 (Emergency)</p>
+                      <p className="text-gray-600">+91 9562746067<br />+91 9400846067<br></br>+91 8289866836</p>
                     </div>
                   </div>
                   
@@ -98,7 +106,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[hsl(216,12%,28%)] mb-1">Email</h3>
-                      <p className="text-gray-600">info@wanderwise.com<br />support@wanderwise.com</p>
+                      <p className="text-gray-600">info@hoffmanholidays.com<br />support@hoffmanholidays.com</p>
                     </div>
                   </div>
                   
@@ -121,7 +129,7 @@ export default function Contact() {
               {/* Office Image */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" 
+                  src="/hoffman_office.png" 
                   alt="WanderWise travel agency office" 
                   className="w-full h-64 object-cover"
                 />
@@ -143,7 +151,7 @@ export default function Contact() {
                           <FormItem>
                             <FormLabel>First Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="John" {...field} />
+                              <Input />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -157,7 +165,7 @@ export default function Contact() {
                           <FormItem>
                             <FormLabel>Last Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Doe" {...field} />
+                              <Input />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -172,7 +180,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
+                            <Input type="email"  />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -186,7 +194,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Phone (Optional)</FormLabel>
                           <FormControl>
-                            <Input type="tel" placeholder="+1 (555) 123-4567" {...field} />
+                            <Input type="tel" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -206,13 +214,13 @@ export default function Contact() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="bali-paradise">Bali Paradise Escape</SelectItem>
-                              <SelectItem value="paris-romance">Paris Romance</SelectItem>
-                              <SelectItem value="tokyo-adventure">Tokyo Adventure</SelectItem>
-                              <SelectItem value="swiss-alps">Swiss Alps Luxury</SelectItem>
-                              <SelectItem value="african-safari">African Safari</SelectItem>
-                              <SelectItem value="maldives-luxury">Maldives Luxury</SelectItem>
-                              <SelectItem value="custom">Custom Package</SelectItem>
+                              <SelectItem value="bali-paradise">Munnar Hill Station Retreat</SelectItem>
+                              <SelectItem value="paris-romance">Vagamon Meadow Adventure</SelectItem>
+                              <SelectItem value="tokyo-adventure">Dandeli Jungle Adventure</SelectItem>
+                              <SelectItem value="swiss-alps">Udupi Coastal Culture</SelectItem>
+                              <SelectItem value="african-safari">Ladakh Himalayan Odyssey</SelectItem>
+                              <SelectItem value="maldives-luxury">Kashmir Valley Retreat</SelectItem>
+                              <SelectItem value="custom">Gokarna Beach & Temple Tour</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage />

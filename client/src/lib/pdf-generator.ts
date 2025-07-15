@@ -232,7 +232,7 @@ export class PDFGenerator {
         ` : ''}
 
         <div class="price-section">
-          <div class="price">$${(pkg.price / 100).toLocaleString()}</div>
+          <div class="price">RS{(pkg.price / 100).toLocaleString()}</div>
           <p>Starting price per person</p>
         </div>
 

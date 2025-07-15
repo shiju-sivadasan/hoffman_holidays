@@ -23,14 +23,22 @@ export default function Testimonials() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-[hsl(203,89%,61%)] to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">What Our Travelers Say</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Hear from thousands of satisfied customers who have experienced the magic of travel with WanderWise
-          </p>
-        </div>
-      </section>
+       <section className="py-20 text-white relative">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hoffman_cover_image.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">What Our Travelers Say</h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+          Hear from thousands of satisfied customers who have experienced the magic of travel with WanderWise
+        </p>
+      </div>
+    </section>
 
       {/* Stats Section */}
       <section className="py-16 bg-white">
@@ -62,8 +70,7 @@ export default function Testimonials() {
           <Card className="p-8 md:p-12 text-center">
             <Quote className="w-12 h-12 text-primary mx-auto mb-6" />
             <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 mb-8 italic">
-              "WanderWise turned our dream honeymoon into reality. Every detail was perfect, from the breathtaking accommodations to the personalized experiences. We can't thank them enough!"
-            </blockquote>
+"Trip To Go turned our college Goa trip into a memory we'll cherish forever! From the beachside stays to the thrilling water sports and perfectly planned nightlife, every moment was unforgettable. It was the perfect mix of fun, freedom, and friendship — huge thanks to the team!"            </blockquote>
             <div className="flex items-center justify-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
@@ -75,8 +82,8 @@ export default function Testimonials() {
                 <AvatarFallback>SJ</AvatarFallback>
               </Avatar>
               <div>
-                <div className="font-semibold text-lg">Sarah & Mike Johnson</div>
-                <div className="text-gray-600">Bali Paradise Escape</div>
+                <div className="font-semibold text-lg">Divya Raj</div>
+                <div className="text-gray-600">Thrissur, Kerala</div>
               </div>
             </div>
           </Card>
@@ -133,12 +140,12 @@ export default function Testimonials() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="p-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+            {/* <Card className="p-6 text-center">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Award Winning</h3>
               <p className="text-sm text-gray-600">Multiple industry awards for excellence</p>
-            </Card>
+            </Card> */}
 
             <Card className="p-6 text-center">
               <Users className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -146,11 +153,11 @@ export default function Testimonials() {
               <p className="text-sm text-gray-600">Experienced travel professionals</p>
             </Card>
 
-            <Card className="p-6 text-center">
+            {/* <Card className="p-6 text-center">
               <Globe className="w-12 h-12 text-secondary mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Global Network</h3>
               <p className="text-sm text-gray-600">Partners in 50+ countries worldwide</p>
-            </Card>
+            </Card> */}
 
             <Card className="p-6 text-center">
               <TrendingUp className="w-12 h-12 text-accent mx-auto mb-4" />
@@ -210,10 +217,11 @@ export default function Testimonials() {
             Join thousands of satisfied travelers and start planning your dream adventure today
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
+            <Button asChild size="lg" variant="secondary"     className="bg-white text-primary hover:bg-gray-200 border border-primary"
+>
               <Link href="/services">Browse Packages</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline"  className="border border-white text-white bg-transparent hover:bg-white hover:text-primary">
               <Link href="/book-now">Start Planning</Link>
             </Button>
           </div>

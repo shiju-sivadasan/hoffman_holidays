@@ -84,14 +84,22 @@ export default function BookNow() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-[hsl(203,89%,61%)] to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Book Your Adventure</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Ready to embark on your dream journey? Fill out the form below and let us create an unforgettable experience for you
-          </p>
-        </div>
-      </section>
+       <section className="py-20 text-white relative">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/hoffman_cover_image.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Book Your Adventure</h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+          Ready to embark on your dream journey? Fill out the form below and let us create an unforgettable experience for you
+        </p>
+      </div>
+    </section>
 
       {/* Booking Form */}
       <section className="py-20">
@@ -116,7 +124,7 @@ export default function BookNow() {
                               <FormItem>
                                 <FormLabel>First Name *</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="John" {...field} />
+                                  <Input/>
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -130,7 +138,7 @@ export default function BookNow() {
                               <FormItem>
                                 <FormLabel>Last Name *</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Doe" {...field} />
+                                  <Input />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -144,7 +152,7 @@ export default function BookNow() {
                               <FormItem>
                                 <FormLabel>Email *</FormLabel>
                                 <FormControl>
-                                  <Input type="email" placeholder="john@example.com" {...field} />
+                                  <Input type="email"  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -158,7 +166,7 @@ export default function BookNow() {
                               <FormItem>
                                 <FormLabel>Phone *</FormLabel>
                                 <FormControl>
-                                  <Input type="tel" placeholder="+1 (555) 123-4567" {...field} />
+                                  <Input type="tel" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -186,7 +194,7 @@ export default function BookNow() {
                                   <SelectContent>
                                     {packages?.map((pkg) => (
                                       <SelectItem key={pkg.id} value={pkg.id.toString()}>
-                                        {pkg.title} - ${(pkg.price / 100).toLocaleString()}
+                                        {pkg.title} - {(pkg.price)}
                                       </SelectItem>
                                     ))}
                                   </SelectContent>
@@ -248,10 +256,10 @@ export default function BookNow() {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="500-1000">$500 - $1,000</SelectItem>
-                                    <SelectItem value="1000-2500">$1,000 - $2,500</SelectItem>
-                                    <SelectItem value="2500-5000">$2,500 - $5,000</SelectItem>
-                                    <SelectItem value="5000+">$5,000+</SelectItem>
+                                    <SelectItem value="500-1000">1,000 - 3,000</SelectItem>
+                                    <SelectItem value="1000-2500">3,000 - 5,500</SelectItem>
+                                    <SelectItem value="2500-5000">5,500 - 7,000</SelectItem>
+                                    <SelectItem value="5000+">7,000+</SelectItem>
                                   </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -307,7 +315,8 @@ export default function BookNow() {
 
                       <Button 
                         type="submit" 
-                        className="w-full btn-primary"
+                          className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+
                         size="lg"
                         disabled={bookingMutation.isPending}
                       >
@@ -401,8 +410,10 @@ export default function BookNow() {
                     Our travel experts are standing by to help you plan the perfect trip.
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div>📞 +1 (555) 123-4567</div>
-                    <div>✉️ info@wanderwise.com</div>
+                    <div>📞 +91 9562746067</div>
+                    <div>📞 +91 9400846067</div>
+                    <div>📞 +91 8289866836</div>
+                    <div>✉️ info@hoffmanholidays.com</div>
                   </div>
                 </CardContent>
               </Card>

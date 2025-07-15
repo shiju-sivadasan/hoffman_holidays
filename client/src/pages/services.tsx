@@ -27,10 +27,10 @@ export default function Services() {
 
   const priceRanges = [
     { value: "all", label: "All Prices" },
-    { value: "budget", label: "Under $1,000" },
-    { value: "mid", label: "$1,000 - $2,500" },
-    { value: "premium", label: "$2,500 - $5,000" },
-    { value: "luxury", label: "$5,000+" },
+    { value: "budget", label: "Under 2,000" },
+    { value: "mid", label: "2,000 - 4,500" },
+    { value: "premium", label: "4,500 - 9,000" },
+    { value: "luxury", label: "9,000+" },
   ];
 
   const filteredPackages = packages?.filter((pkg) => {
@@ -39,7 +39,7 @@ export default function Services() {
     
     const matchesCategory = selectedCategory === "all" || pkg.category === selectedCategory;
     
-    const price = pkg.price / 100;
+    const price = pkg.price;
     let matchesPrice = true;
     
     if (priceRange === "budget") matchesPrice = price < 1000;
@@ -73,8 +73,16 @@ export default function Services() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-[hsl(203,89%,61%)] to-secondary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+       <section className="py-20 text-white relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/hoffman_cover_image.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Travel Packages</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
             Discover our carefully curated collection of travel experiences designed to create unforgettable memories
@@ -185,12 +193,13 @@ export default function Services() {
                           Starting from
                         </div>
                         <div className="text-2xl font-bold text-primary">
-                          ${(pkg.price / 100).toLocaleString()}
+                          {(pkg.price)}
                         </div>
                       </div>
                       
                       <div className="flex gap-3">
-                        <Button asChild className="flex-1 btn-primary">
+                        <Button asChild className="flex-1 btn-primary"   className="w-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
                           <Link href={`/package/${pkg.slug}`}>View Details</Link>
                         </Button>
                         <Button 
@@ -236,7 +245,8 @@ export default function Services() {
             Let us create a custom package tailored specifically to your dreams and preferences
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="btn-primary">
+            <Button asChild size="lg"   className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
               <Link href="/contact">Get Custom Quote</Link>
             </Button>
             <Button asChild size="lg" variant="outline">

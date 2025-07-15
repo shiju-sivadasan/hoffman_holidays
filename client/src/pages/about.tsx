@@ -11,17 +11,17 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-[hsl(216,12%,28%)] mb-6">
-              About WanderWise
+              About Team HoffMan
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              For over 15 years, we've been crafting extraordinary travel experiences that connect people with the world's most beautiful destinations.
+              For over 5 years, we've been crafting extraordinary travel experiences that connect people with the world's most beautiful destinations.
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                src="/hoffman_about_page.jpeg" 
                 alt="Modern travel agency office" 
                 className="rounded-2xl shadow-lg w-full h-auto"
               />
@@ -54,7 +54,8 @@ export default function About() {
                   </li>
                 </ul>
               </div>
-              <Button asChild size="lg" className="btn-primary">
+              <Button asChild size="lg"   className=" bg-blue-600 text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-colors duration-300"
+>
                 <Link href="/services">Explore Our Packages</Link>
               </Button>
             </div>
@@ -140,56 +141,56 @@ export default function About() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[hsl(216,12%,28%)] mb-4">Meet Our Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-[hsl(216,12%,28%)] mb-4">Our Travel Partners</h2>
+            {/* <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Passionate travel experts dedicated to making your dreams come true
-            </p>
+            </p> */}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="p-6 text-center">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                src="/hoffman_traveller_1.jpeg" 
                 alt="Team member" 
                 className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-xl font-semibold mb-2">Michael Chen</h3>
-              <p className="text-primary font-medium mb-3">Founder & CEO</p>
+              <h3 className="text-xl font-semibold mb-2">HatMan</h3>
+              <p className="text-primary font-medium mb-3">17 seat Ac Traveller</p>
               <p className="text-gray-600 text-sm">
-                With 20+ years in travel, Michael's vision drives our commitment to extraordinary experiences.
+                 HatMan, our reliable 17-seat AC Traveller, ensures comfortable and spacious journeys for small groups, perfect for intimate adventures across scenic destinations.
               </p>
             </Card>
 
             <Card className="p-6 text-center">
               <img 
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                src="/hoffman_zedone.jpg" 
                 alt="Team member" 
                 className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-xl font-semibold mb-2">Sarah Williams</h3>
-              <p className="text-primary font-medium mb-3">Head of Operations</p>
+              <h3 className="text-xl font-semibold mb-2">Gustavo</h3>
+              <p className="text-primary font-medium mb-3">49 Seat AC Zedone</p>
               <p className="text-gray-600 text-sm">
-                Sarah ensures every detail is perfect, managing operations with precision and care.
+              Gustavo, our spacious 49-seat AC Zedone, offers premium comfort for larger groups, making long-distance travel enjoyable and hassle-free.
               </p>
             </Card>
 
             <Card className="p-6 text-center">
               <img 
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                src="/hoffman_traveller_2.jpeg" 
                 alt="Team member" 
                 className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
               />
-              <h3 className="text-xl font-semibold mb-2">David Rodriguez</h3>
-              <p className="text-primary font-medium mb-3">Senior Travel Designer</p>
+              <h3 className="text-xl font-semibold mb-2">Sajanka</h3>
+              <p className="text-primary font-medium mb-3">17 seat Ac Traveller</p>
               <p className="text-gray-600 text-sm">
-                David crafts unique itineraries that capture the essence of each destination.
+               Sajanka, a versatile 17-seat AC Traveller, delivers cozy and air-conditioned rides, ideal for exploring hidden gems with smaller travel parties.
               </p>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Awards & Recognition */}
+      {/* Awards & Recognition
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -225,7 +226,7 @@ export default function About() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-white">
@@ -235,13 +236,26 @@ export default function About() {
             Let us help you create memories that will last a lifetime
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">
-              <Link href="/services">Browse Packages</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
+  {/* Button 1: White background, primary text */}
+  <Button
+    asChild
+    size="lg"
+    variant="secondary"
+    className="bg-white text-primary hover:bg-gray-200 border border-primary"
+  >
+    <Link to="/services">Browse Packages</Link>
+  </Button>
+
+  {/* Button 2: Transparent background, white border and text; hover to white bg + primary text */}
+  <Button
+    asChild
+    size="lg"
+    variant="outline"
+    className="border border-white text-white bg-transparent hover:bg-white hover:text-primary"
+  >
+    <Link to="/contact">Contact Us</Link>
+  </Button>
+</div>
         </div>
       </section>
     </div>
