@@ -69,7 +69,7 @@ export default function Navigation() {
               <SheetContent side="right" className="w-80">
                 <div className="flex flex-col space-y-6 mt-8">
                   <Link href="/" className="flex-shrink-0 mb-4">
-                    <h2 className="text-xl font-bold text-primary">WanderWise</h2>
+                    <h2 className="text-xl font-bold text-primary"></h2>
                   </Link>
                   
                   {navigationItems.map((item) => (
